@@ -30,14 +30,16 @@ function App() {
             <>
               <NavLink to="/list">Home</NavLink>
               <NavLink to="/create">Create</NavLink>
-              <Button onClick={handleLogout}>Logout</Button>
+              <Button size="sm" onClick={handleLogout}>
+                Logout
+              </Button>
             </>
           )}
         </header>
         <main>
           <Switch>
             <Route exact path="/">
-              {user ? <Redirect to="/list" /> : <AuthPage />}
+              {user ? <Redirect to="/list" /> : <AuthPage setUser={setUser} />}
             </Route>
             <Route exact path="/list">
               {user ? <ListPage /> : <Redirect to="/" />}

@@ -1,4 +1,4 @@
-import { client, checkError } from './client.js';
+import { client } from './client.js';
 
 export async function signUp(email, password) {
   const response = await client.auth.signUp({ email, password });
