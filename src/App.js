@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import { getUser, logout } from './services/fetch-utils.js';
-import { Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import AuthPage from './components/AuthPage';
 import ListPage from './components/ListPage';
