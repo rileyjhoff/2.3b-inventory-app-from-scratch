@@ -1,13 +1,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
+import { getUser, logout } from './services/fetch-utils.js';
 import { Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import AuthPage from './components/AuthPage';
 import ListPage from './components/ListPage';
 import CreatePage from './components/CreatePage';
 import UpdatePage from './components/UpdatePage';
-import { useEffect, useState } from 'react';
-import { getUser, logout } from './services/fetch-utils.js';
 
 function App() {
   const [user, setUser] = useState({});
@@ -17,6 +17,11 @@ function App() {
     setUser(user);
   }, []);
 
+  async function handleLogout() {
+    await logout();
+    setUser({});
+  }
+
   return (
     <Router>
       <div className="App">
@@ -25,7 +30,7 @@ function App() {
             <>
               <NavLink to="/list">Home</NavLink>
               <NavLink to="/create">Create</NavLink>
-              <Button>Logout</Button>
+              <Button onClick={handleLogout}>Logout</Button>
             </>
           )}
         </header>
