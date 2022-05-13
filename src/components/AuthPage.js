@@ -12,14 +12,12 @@ export default function AuthPage({ setUser }) {
     e.preventDefault();
     const user = await signIn(formSignInEmail, formSignInPassword);
     setUser(user);
-    console.log('this did something');
   }
 
   async function handleSignUp(e) {
     e.preventDefault();
     const user = await signUp(formSignUpEmail, formSignUpPassword);
     setUser(user);
-    console.log('this did something');
   }
 
   return (

@@ -15,8 +15,9 @@ export default function ListPage() {
 
   return (
     <div className="list-page">
-      {scores.map((score, i) => (
-        <ListItem key={i} score={score} />
+      <h3>NHL Scores</h3>
+      {scores.map((game, i) => (
+        <ListItem key={i} game={game} />
       ))}
     </div>
   );
