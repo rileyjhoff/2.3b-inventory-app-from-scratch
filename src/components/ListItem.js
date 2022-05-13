@@ -9,12 +9,12 @@ export default function ListItem({ game }) {
         <div className="game">
           <Card.Title>{game.date}</Card.Title>
           <div className="teams">
-            {game.home_name}
-            {game.away_name}
+            <div>{game.home_name}</div>
+            <div>{game.away_name}</div>
           </div>
           <div className="scores">
-            {game.home_score}
-            {game.away_score}
+            <div>{game.home_score}</div>
+            <div>{game.away_score}</div>
           </div>
         </div>
       </Link>

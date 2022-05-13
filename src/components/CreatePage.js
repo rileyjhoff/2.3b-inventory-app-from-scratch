@@ -21,9 +21,11 @@ export default function CreatePage() {
 
   return (
     <div className="create-page">
+      <h3>Create Score</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Control
           type="date"
+          required
           bsPrefix="game-date"
           value={score.date}
           onChange={(e) => setScore({ ...score, date: e.target.value })}
@@ -38,6 +40,7 @@ export default function CreatePage() {
           <Col>
             <Form.Control
               type="text"
+              required
               value={score.home_name}
               onChange={(e) => setScore({ ...score, home_name: e.target.value })}
             />
@@ -45,6 +48,7 @@ export default function CreatePage() {
           <Col>
             <Form.Control
               type="number"
+              required
               value={score.home_score}
               onChange={(e) => setScore({ ...score, home_score: e.target.value })}
             />
@@ -55,6 +59,7 @@ export default function CreatePage() {
           <Col>
             <Form.Control
               type="text"
+              required
               value={score.away_name}
               onChange={(e) => setScore({ ...score, away_name: e.target.value })}
             />
@@ -62,6 +67,7 @@ export default function CreatePage() {
           <Col>
             <Form.Control
               type="number"
+              required
               value={score.away_score}
               onChange={(e) => setScore({ ...score, away_score: e.target.value })}
             />
