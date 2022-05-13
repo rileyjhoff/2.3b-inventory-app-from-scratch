@@ -22,6 +22,12 @@ export default function CreatePage() {
   return (
     <div className="create-page">
       <Form onSubmit={handleSubmit}>
+        <Form.Control
+          type="date"
+          bsPrefix="game-date"
+          value={score.date}
+          onChange={(e) => setScore({ ...score, date: e.target.value })}
+        />
         <Form.Group as={Row}>
           <Col></Col>
           <Col>Team</Col>
@@ -61,13 +67,7 @@ export default function CreatePage() {
             />
           </Col>
         </Form.Group>
-        <Form.Control
-          type="date"
-          className="game-date"
-          value={score.date}
-          onChange={(e) => setScore({ ...score, date: e.target.value })}
-        />
-        <Button type="submit">Submit </Button>
+        <Button type="submit">Create Game</Button>
       </Form>
     </div>
   );

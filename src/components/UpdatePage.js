@@ -30,8 +30,14 @@ export default function UpdatePage() {
   }
 
   return (
-    <div className="create-page">
+    <div className="update-page">
       <Form onSubmit={handleSubmit}>
+        <Form.Control
+          type="date"
+          bsPrefix="game-date"
+          value={score.date}
+          onChange={(e) => setScore({ ...score, date: e.target.value })}
+        />
         <Form.Group as={Row}>
           <Col></Col>
           <Col>Team</Col>
@@ -71,13 +77,7 @@ export default function UpdatePage() {
             />
           </Col>
         </Form.Group>
-        <Form.Control
-          type="date"
-          className="game-date"
-          value={score.date}
-          onChange={(e) => setScore({ ...score, date: e.target.value })}
-        />
-        <Button type="submit">Submit </Button>
+        <Button type="submit">Update Game</Button>
       </Form>
     </div>
   );
