@@ -29,7 +29,7 @@ export async function getAllScores() {
 }
 
 export async function getScoreById(id) {
-  const response = await client.from('scores').select('*').match({ id });
+  const response = await client.from('scores').select('*').match({ id }).single();
 
   return checkError(response);
 }
